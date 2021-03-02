@@ -24,7 +24,16 @@ def start_game():
         print("To quit type 'xxx' instead of pressing enter\n")
     totalMoney = float(10)
     while True:
-        playingRounds = int(input("How much do you want to play with? "))
+        while True:
+            try:
+                playingRounds = int(input("How much do you want to play with? "))
+                if playingRounds < 1 or playingRounds > 10:
+                    print("Invalid Input, use a number from 1 - 10!")
+                    continue
+                else:
+                    break
+            except:
+                print("Invalid Input, use a number from 1 - 10!")
         gameInput = input("Press <enter> to start: ")
         while gameInput != "":
             if gameInput == "xxx":
