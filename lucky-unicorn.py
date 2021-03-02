@@ -44,7 +44,7 @@ def start_game():
                 print("You have run out of money! Thanks for playing!")
                 return
             if playingRounds == 0:
-                print("You have run out of money!\nYour balance is: ${}".format(str(totalMoney)))
+                print("You have used up your playing money!\nYour balance is: ${}".format(str(totalMoney)))
                 gameInput = input("Do you want to play again [y]/[n]: ")
                 if gameInput == "n":
                     print("You have exited the game.\nYour balance is: ${}".format(str(totalMoney)))
