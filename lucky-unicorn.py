@@ -11,11 +11,12 @@ def statement_generator(text, symbol):
     print(symbol*2 + " "*(len(text)+2) + symbol*2)
     print(symbol*length)
 
-
 def start_game():
     statement_generator("Welcome to Lucky Unicorn", "*")
-    playingRounds = int(input("How much do you want to play with? "))
     played_before = input("Have you played the game before? [y]/[n]: ")
+    while played_before != "n" and played_before != "y":
+        print("Invalid Input, use [y] or [n]!")
+        played_before = input("Have you played the game before? [y]/[n]: ")
     if played_before == "n":
         print("You start by pressing <enter>. You will get either a horse, a zebra, a donkey or a unicorn.")
         print("\nIt costs $1 per round. Depending on your prize you might win some money back")
@@ -23,6 +24,7 @@ def start_game():
         print("To quit type 'xxx' instead of pressing enter\n")
     totalMoney = float(10)
     while True:
+        playingRounds = int(input("How much do you want to play with? "))
         gameInput = input("Press <enter> to start: ")
         while gameInput != "":
             if gameInput == "xxx":
